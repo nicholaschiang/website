@@ -1,28 +1,22 @@
-const path = require("path");
+const path = require('path');
 
 module.exports = {
   root: true,
-  parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "postcss-modules"],
+  parser: '@typescript-eslint/parser',
+  plugins: ['@typescript-eslint', 'postcss-modules'],
   parserOptions: {
-    project: [
-      path.resolve(__dirname, "tsconfig.json"),
-      path.resolve(__dirname, "sw/tsconfig.json"),
-      path.resolve(__dirname, "firebase/functions/tsconfig.json"),
-      path.resolve(__dirname, "aws/tsconfig.json"),
-      path.resolve(__dirname, "cypress/tsconfig.json"),
-    ],
+    project: [path.resolve(__dirname, 'tsconfig.json')],
   },
   extends: [
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "prettier",
-    "prettier/react",
-    "prettier/@typescript-eslint",
-    "plugin:postcss-modules/recommended",
+    'airbnb-typescript',
+    'airbnb/hooks',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'prettier',
+    'prettier/react',
+    'prettier/@typescript-eslint',
+    'plugin:postcss-modules/recommended',
   ],
   env: {
     browser: true,
@@ -33,37 +27,42 @@ module.exports = {
     // anywhere in our code).
     // @see {@link https://eslint.org/docs/rules/no-unused-vars}
     // @see {@link https://github.com/typescript-eslint/typescript-eslint/blob/master/packages/eslint-plugin/docs/rules/no-unused-vars.md}
-    "@typescript-eslint/no-unused-vars": "error",
+    '@typescript-eslint/no-unused-vars': 'error',
 
     // Reset to the default static property placement (so all class static field
     // declarations remain inside of the class).
     // @todo Perhaps we want to use the AirBNB recommended styling.
     // @see {@link https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/static-property-placement.md}
     // @see {@link https://github.com/airbnb/javascript/tree/master/react#ordering}
-    "react/static-property-placement": ["error", "static public field"],
+    'react/static-property-placement': ['error', 'static public field'],
 
     // Support Typescript's triple slash directive comments in reference files.
     // {@link https://github.com/typescript-eslint/typescript-eslint/issues/600}
-    "spaced-comment": ["error", "always", { markers: ["/"] }],
+    'spaced-comment': ['error', 'always', { markers: ['/'] }],
 
     // Bind methods in constructor (don't use arrow functions as class fields).
     // {@link https://github.com/airbnb/javascript/tree/master/react#methods}
     // {@link https://github.com/typescript-eslint/typescript-eslint/issues/636}
-    "@typescript-eslint/unbound-method": "warn",
+    '@typescript-eslint/unbound-method': 'warn',
 
     // We're disabling this so often, it just made sense to make it a 'warning'.
     // {@link https://github.com/airbnb/javascript/tree/master/react#props}
     // {@link https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md}
-    "react/jsx-props-no-spreading": "warn",
+    'react/jsx-props-no-spreading': 'warn',
 
     // Configure `jsx-a11y` to recognize RMWC input components as controls.
     // {@link https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-associated-control.md#case-my-label-and-input-components-are-custom-components}
-    "jsx-a11y/label-has-associated-control": [
-      "error",
+    'jsx-a11y/label-has-associated-control': [
+      'error',
       {
-        controlComponents: ["Checkbox", "TextField", "Select"],
+        controlComponents: ['Checkbox', 'TextField', 'Select'],
       },
     ],
+
+    // I never actually use the `<a>` tag alone anymore (it's always being
+    // wrapped with a Next.js `<Link>` component that handles the `href`).
+    // @see {@link https://nextjs.org/docs/api-reference/next/link}
+    'jsx-a11y/anchor-is-valid': 'off',
 
     // Use `void` operator to deal with dangling promises.
     // @see {@link https://eslint.org/docs/rules/no-void}
@@ -75,7 +74,7 @@ module.exports = {
     // private async someAsyncSideEffectFunction(): Promise<void> {
     //   ...do async side effect stuff
     // }
-    "no-void": ["error", { allowAsStatement: true }],
+    'no-void': ['error', { allowAsStatement: true }],
 
     // Specify inferable types for function parameters. Otherwise, we get type
     // errors when trying to do something like this:
@@ -85,8 +84,8 @@ module.exports = {
     //   const { users } = await new Query({ query }).search();
     //   return users.map(userToOption);
     // }
-    "@typescript-eslint/no-inferrable-types": [
-      "error",
+    '@typescript-eslint/no-inferrable-types': [
+      'error',
       { ignoreParameters: true },
     ],
 
@@ -98,23 +97,23 @@ module.exports = {
     //   if (val === 'do-this-thing') return doThisThing():
     //   doSomethingElse();
     // }
-    "consistent-return": ["warn", { treatUndefinedAsUnspecified: true }],
+    'consistent-return': ['warn', { treatUndefinedAsUnspecified: true }],
 
     // Next.js already imports React globally and handles JSX for us.
     // @see {@link https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/react-in-jsx-scope.md}
-    "react/react-in-jsx-scope": "off",
+    'react/react-in-jsx-scope': 'off',
 
     // Sort imports using ESLint (the AirBNB config disables these opinionated
     // import sorting rules). This sorts the imports within each import group
     // (e.g. built-ins, externals, internals) alphabetically.
     // @see {@link https://eslint.org/docs/rules/sort-imports}
-    "sort-imports": [
-      "error",
+    'sort-imports': [
+      'error',
       {
         ignoreCase: false,
         ignoreDeclarationSort: false,
         ignoreMemberSort: false,
-        memberSyntaxSortOrder: ["none", "all", "multiple", "single"],
+        memberSyntaxSortOrder: ['none', 'all', 'multiple', 'single'],
         allowSeparatedGroups: true,
       },
     ],
@@ -123,57 +122,57 @@ module.exports = {
     // (e.g. built-ins, externals, internals). Those import groups are then
     // sorted alphabetically by the `sort-imports` rule.
     // @see {@link https://github.com/benmosher/eslint-plugin-import/blob/master/docs/rules/order.md}
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
         groups: [
-          "builtin",
-          "external",
-          "internal",
-          "parent",
-          "sibling",
-          "index",
+          'builtin',
+          'external',
+          'internal',
+          'parent',
+          'sibling',
+          'index',
         ],
         pathGroups: [
           {
-            pattern: "pages/**",
-            group: "internal",
-            position: "after",
+            pattern: 'pages/**',
+            group: 'internal',
+            position: 'after',
           },
           {
-            pattern: "components/**",
-            group: "internal",
-            position: "after",
+            pattern: 'components/**',
+            group: 'internal',
+            position: 'after',
           },
           {
-            pattern: "lib/**",
-            group: "internal",
-            position: "after",
+            pattern: 'lib/**',
+            group: 'internal',
+            position: 'after',
           },
           {
-            pattern: "styles/**",
-            group: "internal",
-            position: "after",
+            pattern: 'styles/**',
+            group: 'internal',
+            position: 'after',
           },
           {
-            pattern: "locales/**",
-            group: "internal",
-            position: "after",
+            pattern: 'locales/**',
+            group: 'internal',
+            position: 'after',
           },
         ],
-        pathGroupsExcludedImportTypes: ["builtin"],
-        "newlines-between": "always",
+        pathGroupsExcludedImportTypes: ['builtin'],
+        'newlines-between': 'always',
       },
     ],
 
     // Disallow multiple empty lines, only one newline at the end, and no new
     // lines at the beginning.
     // @see {@link https://eslint.org/docs/rules/no-multiple-empty-lines}
-    "no-multiple-empty-lines": ["error", { max: 1, maxBOF: 0, maxEOF: 0 }],
+    'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 0, maxEOF: 0 }],
   },
   reportUnusedDisableDirectives: true,
   settings: {
-    "postcss-modules": {
+    'postcss-modules': {
       camelCase: true,
       include: /\.scss$/,
       exclude: /\/node_modules\//,

@@ -1,3 +1,5 @@
+import Header from 'components/header';
+
 export default function IndexPage(): JSX.Element {
-  return <h1>Nicholas Chiang</h1>;
+  return <Header />;
 }
