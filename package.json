@@ -5,7 +5,7 @@
   "homepage": "https://nicholaschiang.com",
   "license": "MIT",
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "eslint --ext .ts,.tsx .",
