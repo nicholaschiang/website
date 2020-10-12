@@ -25,9 +25,13 @@
     "url": "https://github.com/nicholaschiang/website/issues"
   },
   "dependencies": {
+    "@prefresh/next": "^1.2.4",
     "next": "^9.5.5",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "preact": "^10.5.4",
+    "preact-render-to-string": "^5.1.10",
+    "react": "github:preact-compat/react#1.0.0",
+    "react-dom": "github:preact-compat/react-dom#1.0.0",
+    "react-ssr-prepass": "npm:preact-ssr-prepass@^1.1.1"
   },
   "devDependencies": {
     "@types/node": "^14.11.8",
@@ -49,9 +53,14 @@
     "next-images": "^1.6.0",
     "prettier": "^2.1.2",
     "pretty-quick": "^3.0.2",
+    "react-refresh": "^0.8.3",
     "release": "^6.3.0",
     "typescript": "^4.0.3",
+    "webpack": "^5.0.0",
     "webpack-bundle-analyzer": "^3.9.0"
+  },
+  "resolutions": {
+    "webpack": "^5.0.0"
   },
   "husky": {
     "hooks": {
