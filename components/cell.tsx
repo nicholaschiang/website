@@ -17,15 +17,10 @@ export default function Cell({ img, alt }: CellProps): JSX.Element {
     <div ref={ref}>
       <img src={img} alt={alt} />
       <style jsx>{`
-        div {
-          width: auto;
-          grid-column-end: span 4;
-          margin: 0;
-        }
-
         img {
           width: 100%;
           cursor: pointer;
+          margin-bottom: -4px;
         }
       `}</style>
     </div>

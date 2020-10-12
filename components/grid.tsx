@@ -8,17 +8,17 @@ export default function Grid({ children }: GridProps): JSX.Element {
       <div className='grid'>{children}</div>
       <style jsx>{`
         .wrapper {
-          max-width: var(--geist-page-width);
+          max-width: var(--geist-page-width-with-margin);
           margin: auto;
-          padding-left: var(--geist-page-margin);
-          padding-right: var(--geist-page-margin);
+          padding: var(--geist-gap-double) var(--geist-page-margin);
         }
 
         .grid {
+          --cell: min(400px, 100%);
           display: grid;
           margin: 0;
           grid-gap: var(--geist-gap);
-          grid-template-columns: repeat(8, minmax(0, 1fr));
+          grid-template-columns: repeat(auto-fill, minmax(var(--cell), 1fr));
         }
       `}</style>
     </div>
