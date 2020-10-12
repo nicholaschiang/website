@@ -10,6 +10,10 @@ import Standing from 'static/standing.jpg';
 import Sunset from 'static/sunset.jpg';
 import Water from 'static/water.jpg';
 
+// TODO: Use `next-optimized-images` to:
+// 1. Make these high-quality images load faster (e.g. use `webm` or `jpg`).
+// 2. Show blurred thumbnails while they're loading (like Medium).
+// @see {@link https://github.com/cyrilwanner/next-optimized-images}
 export default function Photos(): JSX.Element {
   return (
     <main>
