@@ -140,12 +140,12 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: 'components/**',
+            pattern: 'components/icons/**',
             group: 'internal',
             position: 'after',
           },
           {
-            pattern: 'components/icons/**',
+            pattern: 'components/**',
             group: 'internal',
             position: 'after',
           },

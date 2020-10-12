@@ -6812,6 +6812,15 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
+"nanoid@npm:^3.1.12":
+  version: 3.1.12
+  resolution: "nanoid@npm:3.1.12"
+  bin:
+    nanoid: bin/nanoid.cjs
+  checksum: dc51417babadca4b00c2126ac0bc1c01e842e3c40edda2d3e1da40e8aae4d691a2a0b9d8e9c3a8cdb16133345a47f9135f0d0eef85a66ad31711ad3d908050e4
+  languageName: node
+  linkType: hard
+
 "nanomatch@npm:^1.2.9":
   version: 1.2.13
   resolution: "nanomatch@npm:1.2.13"
@@ -9870,6 +9879,13 @@ typescript@^4.0.3:
   languageName: node
   linkType: hard
 
+"vanilla-tilt@npm:^1.7.0":
+  version: 1.7.0
+  resolution: "vanilla-tilt@npm:1.7.0"
+  checksum: e67497d3ad0a6a59a2bef438af6e7e8a67f3b7ce51d2055c43ca288bb396ee2dda7a23dcf1ea9100f73f9f922d75f5c5ea9acb76f543fb25b7b04dd15ee99e8e
+  languageName: node
+  linkType: hard
+
 "vary@npm:~1.1.2":
   version: 1.1.2
   resolution: "vary@npm:1.1.2"
@@ -10042,6 +10058,7 @@ typescript@^4.0.3:
     eslint-plugin-react: ^7.21.4
     eslint-plugin-react-hooks: ^4.1.2
     husky: ^4.3.0
+    nanoid: ^3.1.12
     next: ^9.5.5
     next-images: ^1.6.0
     nprogress: ^0.2.0
@@ -10052,6 +10069,7 @@ typescript@^4.0.3:
     release: ^6.3.0
     styled-jsx: ^3.3.0
     typescript: ^4.0.3
+    vanilla-tilt: ^1.7.0
     webpack: ^5.0.0
     webpack-bundle-analyzer: ^3.9.0
   languageName: unknown

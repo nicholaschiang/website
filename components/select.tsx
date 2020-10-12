@@ -4,23 +4,23 @@ import cn from 'classnames';
 import SelectIcon from 'components/icons/select';
 import SystemIcon from 'components/icons/system';
 
-export interface SelectProps {
-  options: { value: string; label?: string; icon?: JSX.Element }[];
+export interface SelectProps<T extends string> {
+  options: { value: T; label?: string; icon?: JSX.Element }[];
   label: string;
   small?: boolean;
-  value: string;
-  onChange: (value: string) => void;
+  value: T;
+  onChange: (value: T) => void;
 }
 
-export default function Select({
+export default function Select<T extends string>({
   options,
   label,
   small,
   value,
   onChange,
-}: SelectProps): JSX.Element {
+}: SelectProps<T>): JSX.Element {
   const onChangeCallback = useCallback(
-    (evt: FormEvent<HTMLSelectElement>) => onChange(evt.currentTarget.value),
+    (e: FormEvent<HTMLSelectElement>) => onChange(e.currentTarget.value as T),
     [onChange]
   );
 

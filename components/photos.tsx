@@ -36,6 +36,11 @@ export default function Photos(): JSX.Element {
         <Cell img={Sunset} alt='Captured while driving by a field at 60mph' />
         <Cell img={Water} alt='An inviolate stream of chaotic water' />
       </Grid>
+      <style jsx>{`
+        main {
+          padding: var(--geist-gap-double) 0;
+        }
+      `}</style>
     </main>
   );
 }

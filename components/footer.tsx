@@ -1,10 +1,12 @@
+import { useRef } from 'react';
+import { nanoid } from 'nanoid';
 import NextLink from 'next/link';
-
-import Select from 'components/select';
 
 import DarkIcon from 'components/icons/dark';
 import LightIcon from 'components/icons/light';
 import SystemIcon from 'components/icons/system';
+
+import Select from 'components/select';
 
 import { useTheme } from 'lib/theme';
 
@@ -46,11 +48,31 @@ interface GroupProps {
 }
 
 function Group({ label, children }: GroupProps): JSX.Element {
+  const id = useRef<string>(nanoid(5));
+
   return (
     <div>
-      <h3>{label}</h3>
+      <input id={id.current} type='checkbox' aria-label={label} />
+      <label htmlFor={id.current}>
+        <h3>{label}</h3>
+      </label>
       <ul>{children}</ul>
       <style jsx>{`
+        input {
+          border: 0;
+          padding: 0;
+          clip: rect(0 0 0 0);
+          clip-path: inset(100%);
+          height: 1px;
+          width: 1px;
+          margin: -1px;
+          overflow: hidden;
+          position: absolute;
+          appearance: none;
+          white-space: nowrap;
+          word-wrap: normal;
+        }
+
         div:not(:last-of-type) {
           margin-right: var(--geist-gap);
         }
@@ -66,6 +88,37 @@ function Group({ label, children }: GroupProps): JSX.Element {
           font-size: 0.875rem;
           margin: var(--geist-gap-half) 0;
         }
+
+        @media (max-width: 960px) {
+          div {
+            margin-right: 0 !important;
+            border-bottom: 1px solid var(--accents-2);
+          }
+
+          ul {
+            padding-left: var(--geist-gap-half);
+            padding-bottom: var(--geist-gap-half);
+            display: none;
+          }
+
+          input:checked ~ ul {
+            display: block;
+          }
+
+          h3 {
+            cursor: pointer;
+          }
+
+          h3::after {
+            content: '+';
+            float: right;
+            transition: transform 0.15s ease;
+          }
+
+          input:checked ~ label h3::after {
+            transform: rotate(45deg);
+          }
+        }
       `}</style>
     </div>
   );
@@ -77,33 +130,30 @@ export default function Footer(): JSX.Element {
   return (
     <footer>
       <nav role='navigation'>
-        <Group label='Photography'>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
+        <Group label='Socials'>
+          <Link href='https://indiehackers.com/nicholaschiang'>
+            IndieHackers
+          </Link>
+          <Link href='https://instagram.com/nicholashchiang'>Instagram</Link>
+          <Link href='https://facebook.com/nicholas.heng.chiang'>Facebook</Link>
+          <Link href='https://linkedin.com/in/nicholaschiang'>LinkedIn</Link>
+          <Link href='https://github.com/nicholaschiang'>GitHub</Link>
         </Group>
-        <Group label='Photography'>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
+        <Group label='Portfolio'>
+          <Link href='/code'>Web Development</Link>
+          <Link href='/'>Photography</Link>
+          <Link href='/video'>Filmmaking</Link>
+          <Link href='/research'>Research</Link>
         </Group>
-        <Group label='Photography'>
+        <Group label='Portfolio'>
+          <Link href='/code'>Web Development</Link>
           <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
+          <Link href='/video'>Filmmaking</Link>
+          <Link href='/research'>Research</Link>
         </Group>
-        <Group label='Photography'>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/photo'>Photography</Link>
+        <Group label='Useful Links'>
+          <Link href='/contact'>Contact</Link>
+          <Link href='/about'>About</Link>
         </Group>
       </nav>
       <section>
@@ -134,7 +184,6 @@ export default function Footer(): JSX.Element {
       </section>
       <style jsx>{`
         footer {
-          margin-top: calc(1.5 * var(--geist-gap-double));
           background: var(--accents-1);
           border-top: 1px solid var(--accents-2);
           padding: calc(1.5 * var(--geist-gap)) var(--geist-gap)
@@ -151,7 +200,7 @@ export default function Footer(): JSX.Element {
 
         section {
           max-width: var(--geist-page-width);
-          margin: var(--geist-gap) auto 0;
+          margin: 0 auto;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -161,6 +210,21 @@ export default function Footer(): JSX.Element {
         span {
           color: var(--accents-5);
           font-size: 14px;
+        }
+
+        @media (max-width: 960px) {
+          nav {
+            flex-direction: column;
+          }
+
+          section {
+            flex-direction: column;
+            justify-content: center;
+          }
+
+          span {
+            margin-bottom: var(--geist-gap);
+          }
         }
       `}</style>
     </footer>

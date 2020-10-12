@@ -3,7 +3,7 @@ import Photos from 'components/photos';
 
 export default function IndexPage(): JSX.Element {
   return (
-    <Page>
+    <Page page='photo'>
       <Photos />
     </Page>
   );

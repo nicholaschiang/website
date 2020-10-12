@@ -1,15 +1,19 @@
 import NextLink from 'next/link';
+import cn from 'classnames';
+
+import PageName from 'lib/page-name';
 
 interface LinkProps {
   href: string;
   children: string;
+  active: boolean;
 }
 
-function Link({ href, children }: LinkProps): JSX.Element {
+function Link({ href, children, active }: LinkProps): JSX.Element {
   return (
     <li>
       <NextLink href={href}>
-        <a>{children}</a>
+        <a className={cn({ active })}>{children}</a>
       </NextLink>
       <style jsx>{`
         li {
@@ -29,52 +33,78 @@ function Link({ href, children }: LinkProps): JSX.Element {
         a:hover {
           color: var(--geist-foreground);
         }
+
+        a.active {
+          color: var(--geist-foreground);
+        }
+
+        @media (max-width: 800px) {
+          li {
+            white-space: nowrap;
+            margin: 0 var(--geist-gap-half);
+          }
+
+          li:first-of-type {
+            margin-left: 0;
+          }
+
+          li:last-of-type {
+            margin-right: var(--geist-page-margin);
+          }
+        }
       `}</style>
     </li>
   );
 }
 
-export default function Header(): JSX.Element {
-  return (
-    <div>
-      <header>
-        <h1>Nicholas Chiang</h1>
-        <nav>
-          <ul>
-            <Link href='/photo'>Photography</Link>
-            <Link href='/video'>Filmmaking</Link>
-            <Link href='/code'>Web Development</Link>
-            <Link href='/research'>Research</Link>
-            <Link href='/about'>About</Link>
-            <Link href='/contact'>Contact</Link>
-          </ul>
-        </nav>
-      </header>
-      <style jsx>{`
-        div {
-          display: flex;
-          justify-content: center;
-          width: 100%;
-          max-width: 100%;
-          min-height: var(--header-height);
-        }
+export interface HeaderProps {
+  page: PageName;
+}
 
+export default function Header({ page }: HeaderProps): JSX.Element {
+  return (
+    <header>
+      <h1>Nicholas Chiang</h1>
+      <nav>
+        <ul>
+          <Link active={page === 'photo'} href='/'>
+            Photography
+          </Link>
+          <Link active={page === 'video'} href='/video'>
+            Filmmaking
+          </Link>
+          <Link active={page === 'code'} href='/code'>
+            Web Development
+          </Link>
+          <Link active={page === 'research'} href='/research'>
+            Research
+          </Link>
+          <Link active={page === 'about'} href='/about'>
+            About
+          </Link>
+          <Link active={page === 'contact'} href='/contact'>
+            Contact
+          </Link>
+        </ul>
+      </nav>
+      <style jsx>{`
         header {
-          width: var(--geist-page-width-with-margin);
-          margin: var(--geist-gap-double) auto;
-          padding-left: var(--geist-page-margin);
-          padding-right: var(--geist-page-margin);
+          width: 100%;
+          max-width: var(--geist-page-width-with-margin);
+          margin: 0 auto;
         }
 
         h1 {
           font-size: 36px;
           text-align: center;
-          margin: 0 0 var(--geist-gap-double);
+          padding: var(--geist-gap-double) var(--geist-page-margin);
+          margin: 0;
         }
 
         nav {
           display: flex;
           align-items: center;
+          padding: 0 var(--geist-page-margin);
           justify-content: center;
         }
 
@@ -83,7 +113,27 @@ export default function Header(): JSX.Element {
           padding: 0;
           margin: 0;
         }
+
+        @media (max-width: 800px) {
+          nav {
+            max-width: 100%;
+            margin: auto;
+            align-items: flex-end;
+            overflow: auto;
+            scrollbar-width: none;
+            justify-content: flex-start;
+          }
+
+          ul {
+            display: flex;
+            flex-grow: 1;
+            transform: translateZ(0);
+            margin-right: 0;
+            align-items: center;
+            justify-content: center;
+          }
+        }
       `}</style>
-    </div>
+    </header>
   );
 }

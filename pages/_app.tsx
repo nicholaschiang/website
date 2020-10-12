@@ -40,6 +40,9 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
         }
 
         html {
+          height: 100%;
+          box-sizing: border-box;
+          touch-action: manipulation;
           font-feature-settings: 'case' 1, 'rlig' 1, 'calt' 0;
         }
 
