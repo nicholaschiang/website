@@ -80,44 +80,6 @@ export default css.global`
     --geist-form-height: var(--geist-space-medium);
   }
 
-  /* Dark Theme */
-  .dark {
-    --geist-foreground: #fff;
-    --geist-background: #000;
-    --geist-selection: var(--geist-highlight-purple);
-    --accents-8: #fafafa;
-    --accents-7: #eaeaea;
-    --accents-6: #999;
-    --accents-5: #888;
-    --accents-4: #666;
-    --accents-3: #444;
-    --accents-2: #333;
-    --accents-1: #111;
-    --geist-secondary-lighter: var(--accents-2);
-    --geist-secondary-light: var(--accents-3);
-    --geist-secondary: var(--accents-5);
-    --geist-secondary-dark: var(--accents-7);
-    --geist-link-color: var(--geist-foreground);
-    --geist-marketing-gray: var(--accents-1);
-    --geist-code: var(--geist-cyan-light);
-    --geist-error-light: #f33;
-    --geist-error: red;
-    --geist-error-dark: #e60000;
-    --dropdown-box-shadow: 0 0 0 1px var(--accents-2);
-    --dropdown-triangle-stroke: #333;
-    --scroller-start: #000;
-    --scroller-end: transparent;
-    --header-background: rgba(0, 0, 0, 0.5);
-    --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
-    --shadow-smallest: 0 0 0 1px var(--accents-2);
-    --shadow-small: 0 0 0 1px var(--accents-2);
-    --shadow-medium: 0 0 0 1px var(--accents-2);
-    --shadow-large: 0 0 0 1px var(--accents-2);
-    --shadow-sticky: 0 0 0 1px var(--accents-2);
-    --shadow-hover: 0 0 0 1px var(--geist-foreground);
-    --portal-opacity: 0.75;
-  }
-
   /* Light Theme */
   :root {
     --geist-success-lighter: #d3e5ff;
@@ -173,5 +135,43 @@ export default css.global`
     --shadow-hover: 0 30px 60px rgba(0, 0, 0, 0.12);
     --shadow-sticky: 0 12px 10px -10px rgba(0, 0, 0, 0.12);
     --portal-opacity: 0.25;
+  }
+
+  /* Dark Theme */
+  .dark {
+    --geist-foreground: #fff;
+    --geist-background: #000;
+    --geist-selection: var(--geist-highlight-purple);
+    --accents-8: #fafafa;
+    --accents-7: #eaeaea;
+    --accents-6: #999;
+    --accents-5: #888;
+    --accents-4: #666;
+    --accents-3: #444;
+    --accents-2: #333;
+    --accents-1: #111;
+    --geist-secondary-lighter: var(--accents-2);
+    --geist-secondary-light: var(--accents-3);
+    --geist-secondary: var(--accents-5);
+    --geist-secondary-dark: var(--accents-7);
+    --geist-link-color: var(--geist-foreground);
+    --geist-marketing-gray: var(--accents-1);
+    --geist-code: var(--geist-cyan-light);
+    --geist-error-light: #f33;
+    --geist-error: red;
+    --geist-error-dark: #e60000;
+    --dropdown-box-shadow: 0 0 0 1px var(--accents-2);
+    --dropdown-triangle-stroke: #333;
+    --scroller-start: #000;
+    --scroller-end: transparent;
+    --header-background: rgba(0, 0, 0, 0.5);
+    --header-border-bottom: inset 0 -1px 0 0 hsla(0, 0%, 100%, 0.1);
+    --shadow-smallest: 0 0 0 1px var(--accents-2);
+    --shadow-small: 0 0 0 1px var(--accents-2);
+    --shadow-medium: 0 0 0 1px var(--accents-2);
+    --shadow-large: 0 0 0 1px var(--accents-2);
+    --shadow-sticky: 0 0 0 1px var(--accents-2);
+    --shadow-hover: 0 0 0 1px var(--geist-foreground);
+    --portal-opacity: 0.75;
   }
 `;

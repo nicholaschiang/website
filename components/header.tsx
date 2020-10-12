@@ -1,19 +1,16 @@
 import NextLink from 'next/link';
 
-function Link({
-  href,
-  children,
-}: {
+interface LinkProps {
   href: string;
   children: string;
-}): JSX.Element {
+}
+
+function Link({ href, children }: LinkProps): JSX.Element {
   return (
-    <>
-      <li>
-        <NextLink href={href}>
-          <a>{children}</a>
-        </NextLink>
-      </li>
+    <li>
+      <NextLink href={href}>
+        <a>{children}</a>
+      </NextLink>
       <style jsx>{`
         li {
           display: inline;
@@ -33,7 +30,7 @@ function Link({
           color: var(--geist-foreground);
         }
       `}</style>
-    </>
+    </li>
   );
 }
 
@@ -54,9 +51,17 @@ export default function Header(): JSX.Element {
         </nav>
       </header>
       <style jsx>{`
+        div {
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          max-width: 100%;
+          min-height: var(--header-height);
+        }
+
         header {
           width: var(--geist-page-width-with-margin);
-          margin: auto;
+          margin: var(--geist-gap-double) auto;
           padding-left: var(--geist-page-margin);
           padding-right: var(--geist-page-margin);
         }
@@ -64,7 +69,7 @@ export default function Header(): JSX.Element {
         h1 {
           font-size: 36px;
           text-align: center;
-          margin: var(--geist-gap-double) 0;
+          margin: 0 0 var(--geist-gap-double);
         }
 
         nav {

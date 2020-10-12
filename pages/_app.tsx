@@ -1,13 +1,29 @@
+import { useEffect, useState } from 'react';
 import { AppProps } from 'next/app';
 
 import NProgress from 'components/nprogress';
+
+import { Theme, ThemeContext } from 'lib/theme';
 
 import base from 'styles/base';
 import font from 'styles/font';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
+  // TODO: Store the user's selected theme preferences in a cookie or local
+  // storage so it is persisted every time they visit the website.
+  const [theme, setTheme] = useState<Theme>('system');
+
+  useEffect(() => {
+    let dark = theme === 'dark';
+    if (theme === 'system') {
+      const mq = matchMedia('(prefers-color-scheme: dark)');
+      if (mq.matches) dark = true;
+    }
+    document.documentElement.className = dark ? 'dark' : '';
+  }, [theme]);
+
   return (
-    <>
+    <ThemeContext.Provider value={{ theme, setTheme }}>
       <Component {...pageProps} />
       <NProgress />
       <style jsx global>
@@ -48,6 +64,6 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
           color: var(--geist-foreground);
         }
       `}</style>
-    </>
+    </ThemeContext.Provider>
   );
 }

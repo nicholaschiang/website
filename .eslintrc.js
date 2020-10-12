@@ -145,6 +145,11 @@ module.exports = {
             position: 'after',
           },
           {
+            pattern: 'components/icons/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
             pattern: 'lib/**',
             group: 'internal',
             position: 'after',
@@ -156,6 +161,11 @@ module.exports = {
           },
           {
             pattern: 'locales/**',
+            group: 'internal',
+            position: 'after',
+          },
+          {
+            pattern: 'static/**',
             group: 'internal',
             position: 'after',
           },
