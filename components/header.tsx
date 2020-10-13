@@ -1,7 +1,7 @@
 import NextLink from 'next/link';
 import cn from 'classnames';
 
-import PageName from 'lib/page-name';
+import PageId from 'lib/page';
 
 interface LinkProps {
   href: string;
@@ -58,7 +58,7 @@ function Link({ href, children, active }: LinkProps): JSX.Element {
 }
 
 export interface HeaderProps {
-  page: PageName;
+  page: PageId;
 }
 
 export default function Header({ page }: HeaderProps): JSX.Element {
@@ -70,7 +70,7 @@ export default function Header({ page }: HeaderProps): JSX.Element {
           <Link active={page === 'photo'} href='/'>
             Photography
           </Link>
-          <Link active={page === 'video'} href='/video'>
+          <Link active={page === 'film'} href='/film'>
             Filmmaking
           </Link>
           <Link active={page === 'code'} href='/code'>

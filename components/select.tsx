@@ -37,7 +37,9 @@ export default function Select<T extends string>({
           aria-label={label}
         >
           {options.map((opt) => (
-            <option value={opt.value}>{opt.label || opt.value}</option>
+            <option key={opt.value} value={opt.value}>
+              {opt.label || opt.value}
+            </option>
           ))}
         </select>
         <span className='suffix'>

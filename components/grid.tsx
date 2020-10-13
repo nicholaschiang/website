@@ -1,8 +1,9 @@
 export interface GridProps {
   children: JSX.Element[];
+  cell?: string;
 }
 
-export default function Grid({ children }: GridProps): JSX.Element {
+export default function Grid({ children, cell }: GridProps): JSX.Element {
   return (
     <div className='wrapper'>
       <div className='grid'>{children}</div>
@@ -14,7 +15,7 @@ export default function Grid({ children }: GridProps): JSX.Element {
         }
 
         .grid {
-          --cell: min(400px, 100%);
+          --cell: min(${cell || '400px'}, 100%);
           display: grid;
           margin: 0;
           grid-gap: var(--geist-gap);

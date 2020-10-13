@@ -1,4 +1,5 @@
-import Cell from 'components/cell';
+import { useEffect, useRef } from 'react';
+
 import Grid from 'components/grid';
 
 import Backpack from 'static/backpack.jpg';
@@ -10,6 +11,38 @@ import Standing from 'static/standing.jpg';
 import Sunset from 'static/sunset.jpg';
 import Water from 'static/water.jpg';
 
+async function initTilt(elem: HTMLDivElement): Promise<void> {
+  const { default: VanillaTilt } = await import('vanilla-tilt');
+  VanillaTilt.init(elem, { max: 4 });
+}
+
+interface CellProps {
+  src: string;
+  alt: string;
+}
+
+function Cell({ src, alt }: CellProps): JSX.Element {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    void initTilt(ref.current);
+  }, [ref]);
+
+  return (
+    <div ref={ref}>
+      <img src={src} alt={alt} />
+      <style jsx>{`
+        img {
+          width: 100%;
+          cursor: pointer;
+          margin-bottom: -4px;
+        }
+      `}</style>
+    </div>
+  );
+}
+
 // TODO: Use `next-optimized-images` to:
 // 1. Make these high-quality images load faster (e.g. use `webm` or `jpg`).
 // 2. Show blurred thumbnails while they're loading (like Medium).
@@ -18,23 +51,23 @@ export default function Photos(): JSX.Element {
   return (
     <main>
       <Grid>
-        <Cell img={Backpack} alt='MW Backpack at Stanford University' />
-        <Cell img={Family} alt='Family enjoying California weather' />
-        <Cell img={Sitting} alt='Couple on the grass at Stanford University' />
+        <Cell src={Backpack} alt='MW Backpack at Stanford University' />
+        <Cell src={Family} alt='Family enjoying California weather' />
+        <Cell src={Sitting} alt='Couple on the grass at Stanford University' />
         <Cell
-          img={Standing}
+          src={Standing}
           alt='Couple framed on the steps of Stanford University'
         />
         <Cell
-          img={Graffiti}
+          src={Graffiti}
           alt='Admiring the iconic graffiti in San Francisco'
         />
         <Cell
-          img={Pinecone}
+          src={Pinecone}
           alt='Beauties of nature as embodied by a pinecone branch'
         />
-        <Cell img={Sunset} alt='Captured while driving by a field at 60mph' />
-        <Cell img={Water} alt='An inviolate stream of chaotic water' />
+        <Cell src={Sunset} alt='Captured while driving by a field at 60mph' />
+        <Cell src={Water} alt='An inviolate stream of chaotic water' />
       </Grid>
     </main>
   );

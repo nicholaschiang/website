@@ -1588,6 +1588,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/hls.js@npm:^0.13.2":
+  version: 0.13.2
+  resolution: "@types/hls.js@npm:0.13.2"
+  checksum: 22d1cbfba6df8d21d4464447249c52498154e859e722f15bd7e051f5ef1e152fddd15d12cb4ce81fcac45faa8ee1abf953bdb1691aad423a86a326961cda69cf
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:*, @types/json-schema@npm:^7.0.3, @types/json-schema@npm:^7.0.5, @types/json-schema@npm:^7.0.6":
   version: 7.0.6
   resolution: "@types/json-schema@npm:7.0.6"
@@ -4496,6 +4503,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"eventemitter3@npm:^4.0.3":
+  version: 4.0.7
+  resolution: "eventemitter3@npm:4.0.7"
+  checksum: 1fc12c7bc3b4194c50975827e72d56ff57c32b75a4c7dbf4d5eebf3c8371f6f1aad6799150b609de1b867c0d8a9885c08b6ca5e7e0dc437d6152f3063b2607dd
+  languageName: node
+  linkType: hard
+
 "events@npm:^3.2.0":
   version: 3.2.0
   resolution: "events@npm:3.2.0"
@@ -5385,6 +5399,16 @@ fsevents@^1.2.7:
   bin:
     he: bin/he
   checksum: 212122003c20c8c17ac0c83a419b4c8e835411ff6ab9195d053ea6e4a0597cc005b5b8eabcbd57b0b0c0fe676f0049e09315845fff4e051198845491cbba260e
+  languageName: node
+  linkType: hard
+
+"hls.js@npm:^0.14.15":
+  version: 0.14.15
+  resolution: "hls.js@npm:0.14.15"
+  dependencies:
+    eventemitter3: ^4.0.3
+    url-toolkit: ^2.1.6
+  checksum: 514601bdb1054aeb5ed706e43e780a2ff0d284b3c11bd6d6bd7c56adb4853aff545a7551f80402d75ce62526583c1b0faccf543abef27a459ed64428cf69f084
   languageName: node
   linkType: hard
 
@@ -9812,6 +9836,13 @@ typescript@^4.0.3:
   languageName: node
   linkType: hard
 
+"url-toolkit@npm:^2.1.6":
+  version: 2.2.0
+  resolution: "url-toolkit@npm:2.2.0"
+  checksum: 144115649e46a4f2aa7f2bdd4d21463a938659149d4f3beecb2ca4fa79dbf3d3b3411b4fa5c80b4fdaecf044941bb9099ac6792c2b9f7e90253f2b4064c2ca23
+  languageName: node
+  linkType: hard
+
 "use-subscription@npm:1.4.1":
   version: 1.4.1
   resolution: "use-subscription@npm:1.4.1"
@@ -10039,6 +10070,7 @@ typescript@^4.0.3:
   resolution: "website@workspace:."
   dependencies:
     "@types/classnames": ^2.2.10
+    "@types/hls.js": ^0.13.2
     "@types/node": ^14.11.8
     "@types/nprogress": ^0.2.0
     "@types/react": ^16.9.52
@@ -10057,6 +10089,7 @@ typescript@^4.0.3:
     eslint-plugin-prettier: ^3.1.4
     eslint-plugin-react: ^7.21.4
     eslint-plugin-react-hooks: ^4.1.2
+    hls.js: ^0.14.15
     husky: ^4.3.0
     nanoid: ^3.1.12
     next: ^9.5.5

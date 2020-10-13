@@ -1,9 +1,9 @@
 import Page from 'components/page';
 import Photos from 'components/photos';
 
-export default function IndexPage(): JSX.Element {
+export default function PhotoPage(): JSX.Element {
   return (
-    <Page page='photo'>
+    <Page title='Nicholas Chiang - Photography' id='photo'>
       <Photos />
     </Page>
   );
