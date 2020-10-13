@@ -9,8 +9,6 @@ import base from 'styles/base';
 import font from 'styles/font';
 
 export default function App({ Component, pageProps }: AppProps): JSX.Element {
-  // TODO: Store the user's selected theme preferences in a cookie or local
-  // storage so it is persisted every time they visit the website.
   const [theme, setTheme] = useState<Theme>('system');
 
   useEffect(() => {
@@ -20,6 +18,13 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       if (mq.matches) dark = true;
     }
     document.documentElement.className = dark ? 'dark' : '';
+  }, [theme]);
+
+  useEffect(() => {
+    setTheme((prev) => (localStorage.getItem('theme') as Theme) || prev);
+  }, []);
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
   }, [theme]);
 
   return (
