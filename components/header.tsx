@@ -73,7 +73,7 @@ export default function Header({ page }: HeaderProps): JSX.Element {
           <Link active={page === 'film'} href='/film'>
             Filmmaking
           </Link>
-          <Link active={page === 'code'} href='/code'>
+          <Link active={page === 'web'} href='/web'>
             Web Development
           </Link>
           <Link active={page === 'research'} href='/research'>

@@ -1,3 +1,3 @@
-type PageId = 'photo' | 'film' | 'code' | 'research' | 'about' | 'contact';
+type PageId = 'photo' | 'film' | 'web' | 'research' | 'about' | 'contact';
 
 export default PageId;
