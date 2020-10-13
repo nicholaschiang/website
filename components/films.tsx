@@ -5,10 +5,12 @@ export default function Films(): JSX.Element {
   return (
     <main>
       <Grid cell='var(--geist-page-width)'>
-        <Video src='https://stream.mux.com/3L4R01YIn5SAiAl3XxIyiwSrWP6ART5Ssvzj6qZjZDp00.m3u8' />
-        <Video src='https://stream.mux.com/3L4R01YIn5SAiAl3XxIyiwSrWP6ART5Ssvzj6qZjZDp00.m3u8' />
-        <Video src='https://stream.mux.com/3L4R01YIn5SAiAl3XxIyiwSrWP6ART5Ssvzj6qZjZDp00.m3u8' />
-        <Video src='https://stream.mux.com/3L4R01YIn5SAiAl3XxIyiwSrWP6ART5Ssvzj6qZjZDp00.m3u8' />
+        <Video thumb={56} id='PE4KdIrENlIY3LYIvfzOAO496VexiAPCrr1PIccJnc4' />
+        <Video thumb={26} id='MCOe00cp5LCWa3jtr7xQyBJNUtWUVlBT6RkpoRKycFF4' />
+        <Video thumb={17} id='OJibVn7k3QxG9W8xyg8F0175zUWmguLPlBu302CLPiUcY' />
+        <Video thumb={141} id='i92mUmNJScSIhuv28fZrAbMTZu8yDsFLxzrWuCCTXTY' />
+        <Video thumb={3} id='NNIfytq35KfrleHqFWdZm0200f7kfMDXEzJXPPrfvH68U' />
+        <Video thumb={2} id='Gl44sjwE7TzZsCbGz8mxIvIykPABE1svoFVWKUXptpo' />
       </Grid>
     </main>
   );

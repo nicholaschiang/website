@@ -145,12 +145,6 @@ export default function Footer(): JSX.Element {
           <Link href='/film'>Filmmaking</Link>
           <Link href='/research'>Research</Link>
         </Group>
-        <Group label='Portfolio'>
-          <Link href='/code'>Web Development</Link>
-          <Link href='/photo'>Photography</Link>
-          <Link href='/film'>Filmmaking</Link>
-          <Link href='/research'>Research</Link>
-        </Group>
         <Group label='Useful Links'>
           <Link href='/contact'>Contact</Link>
           <Link href='/about'>About</Link>

@@ -55,13 +55,15 @@ async function loadMedia(video: HTMLVideoElement, src: string): Promise<void> {
 }
 
 export interface VideoProps {
-  src: string;
+  id: string;
+  thumb: number;
   autoplay?: boolean;
   loop?: boolean;
 }
 
 export default function Video({
-  src,
+  id,
+  thumb,
   autoplay,
   loop,
 }: VideoProps): JSX.Element {
@@ -69,8 +71,8 @@ export default function Video({
 
   useEffect(() => {
     if (!ref.current) return;
-    void loadMedia(ref.current, src);
-  }, [ref, src]);
+    void loadMedia(ref.current, `https://stream.mux.com/${id}.m3u8`);
+  }, [ref, id]);
 
   const [visible, setVisible] = useState<boolean>(false);
   const onEnter = useCallback(() => setVisible(true), []);
@@ -138,8 +140,8 @@ export default function Video({
       <div className='main'>
         <div className='container'>
           <video
-            src='https://assets.vercel.com/video/upload/v1542426673/front/design/examples/live-support.mp4'
             ref={ref}
+            poster={`https://image.mux.com/${id}/thumbnail.jpg?time=${thumb}`}
             onTimeUpdate={updateProgress}
             onDurationChange={updateProgress}
             autoPlay={autoplay}
@@ -219,7 +221,7 @@ export default function Video({
         div.container {
           display: flex;
           justify-content: center;
-          padding-bottom: 65%;
+          padding-bottom: calc(100% / 16 * 9);
         }
         
         .caption {
