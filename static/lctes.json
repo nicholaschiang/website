@@ -1,0 +1,15 @@
+{
+  "title": "Automating the Generation of Hardware Component Knowledge Bases",
+  "abstract": "Hardware component databases are critical resources in designing embedded systems. Since generating these databases requires hundreds of thousands of hours of manual data entry, they are proprietary, limited in the data they provide, and have many random data entry errors. \n We present a machine-learning based approach for automating the generation of component databases directly from datasheets. Extracting data directly from datasheets is challenging because: (1) the data is relational in nature and relies on non-local context, (2) the documents are filled with technical jargon, and (3) the datasheets are PDFs, a format that decouples visual locality from locality in the document. The proposed approach uses a rich data model and weak supervision to address these challenges. \n We evaluate the approach on datasheets of three classes of hardware components and achieve an average quality of 75 F1 points which is comparable to existing human-curated knowledge bases. We perform two applications studies that demonstrate the extraction of multiple data modalities such as numerical properties and images. We show how different sources of supervision such as heuristics and human labels have distinct advantages which can be utilized together within a single methodology to automatically generate hardware component knowledge bases.",
+  "authors": [
+    "Luke Hsiao",
+    "Sen Wu",
+    "Nicholas Chiang",
+    "Christoper Ré",
+    "Philip Levis"
+  ],
+  "paper": "https://dl.acm.org/doi/10.1145/3316482.3326344?cid=99659274049",
+  "slides": "https://sing.stanford.edu/site/talks/hack-lctes19.pdf",
+  "data": "https://doi.org/10.5281/zenodo.2647543",
+  "code": "https://github.com/lukehsiao/lctes-p27"
+}

@@ -30,7 +30,7 @@ export default function Page({
       </Head>
       <div>
         <Header page={id} />
-        {children}
+        <main>{children}</main>
         <style jsx>{`
           div {
             min-height: 100vh;

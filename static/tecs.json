@@ -1,0 +1,12 @@
+{
+  "title": "Creating Hardware Component Knowledge Bases with Training Data Generation and Multi-task Learning",
+  "abstract": "Hardware component databases are vital resources in designing embedded systems. Since creating these databases requires hundreds of thousands of hours of manual data entry, they are proprietary, limited in the data they provide, and have random data entry errors. \n We present a machine learning based approach for creating hardware component databases directly from datasheets. Extracting data directly from datasheets is challenging because: (1) the data is relational in nature and relies on non-local context, (2) the documents are filled with technical jargon, and (3) the datasheets are PDFs, a format that decouples visual locality from locality in the document. Addressing this complexity has traditionally relied on human input, making it costly to scale. Our approach uses a rich data model, weak supervision, data augmentation, and multi-task learning to create these knowledge bases in a matter of days. \n We evaluate the approach on datasheets of three types of components and achieve an average quality of 77 F1 points—quality comparable to existing human-curated knowledge bases. We perform application studies that demonstrate the extraction of multiple data modalities including numerical properties and images. We show how different sources of supervision such as heuristics and human labels have distinct advantages that can be utilized together to improve knowledge base quality. Finally, we present a case study to show how this approach changes the way practitioners create hardware component knowledge bases.",
+  "authors": [
+    "Luke Hsiao",
+    "Sen Wu",
+    "Nicholas Chiang",
+    "Christoper Ré",
+    "Philip Levis"
+  ],
+  "paper": "https://dl.acm.org/doi/10.1145/3391906?cid=99659274049"
+}
