@@ -146,7 +146,7 @@ export default function Footer(): JSX.Element {
           <Link href='/research'>Research</Link>
         </Group>
         <Group label='Useful Links'>
-          <Link href='/contact'>Contact</Link>
+          <Link href='mailto:site@nicholaschiang.com'>Contact</Link>
           <Link href='/resume.pdf'>Resume</Link>
         </Group>
       </nav>

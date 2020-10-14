@@ -27,7 +27,10 @@ export default function Header({ page }: HeaderProps): JSX.Element {
           <Link active={page === 'resume'} href='/resume.pdf'>
             Resume
           </Link>
-          <Link active={page === 'contact'} href='/contact'>
+          <Link
+            active={page === 'contact'}
+            href='mailto:site@nicholaschiang.com'
+          >
             Contact
           </Link>
         </ul>

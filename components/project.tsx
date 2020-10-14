@@ -31,7 +31,9 @@ export default function Project({
   return (
     <div className='project'>
       <div className='preview'>
-        <img src={preview} alt={`Preview of ${title}`} />
+        <a href={paper}>
+          <img src={preview} alt={`Preview of ${title}`} />
+        </a>
         <ul>
           <li>
             <a href={paper}>Paper</a>
@@ -107,7 +109,9 @@ export default function Project({
 
         img {
           width: 100%;
+          height: 100%;
           box-shadow: var(--shadow-large);
+          background: white;
         }
 
         h3 {
