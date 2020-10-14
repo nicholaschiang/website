@@ -37,7 +37,7 @@ firebase-debug.log*
 ui-debug.log*
 
 # Large Files
-static/*.mp4
+assets/*.mp4
 
 # Vercel Linkage
 .vercel

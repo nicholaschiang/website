@@ -3,6 +3,8 @@ import Grid from 'components/grid';
 import Page from 'components/page';
 import Video from 'components/video';
 
+// TODO: Instead of using the default JPG thumbnails from Mux, I should see if I
+// can create my own optimized versions using `next-optimized-images`.
 export default function FilmPage(): JSX.Element {
   return (
     <Page title='Nicholas Chiang - Filmmaking' id='film'>

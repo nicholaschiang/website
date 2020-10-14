@@ -165,7 +165,7 @@ module.exports = {
             position: 'after',
           },
           {
-            pattern: 'static/**',
+            pattern: 'assets/**',
             group: 'internal',
             position: 'after',
           },

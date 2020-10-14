@@ -1,22 +1,26 @@
 import { useMemo, useRef } from 'react';
-import { nanoid } from 'nanoid';
+import Img from 'react-optimized-image';
 
 export interface ProjectProps {
+  id: string;
   title: string;
   authors: string[];
   abstract: string;
-  preview: string;
   paper: string;
   code?: string;
   data?: string;
   slides?: string;
 }
 
+// TODO: Remove the `require()` statement and instead import these images using
+// ES6 syntax. Blocker: the way that `react-optimized-image/plugin` is setup.
+// @see {@link https://github.com/cyrilwanner/react-optimized-image/issues/6}
+// @see {@link https://github.com/cyrilwanner/next-optimized-images/issues/186}
 export default function Project({
+  id,
   title,
   authors,
   abstract,
-  preview,
   paper,
   code,
   data,
@@ -26,13 +30,15 @@ export default function Project({
     return authors.indexOf('Nicholas Chiang');
   }, [authors]);
 
-  const id = useRef(nanoid(5));
-
   return (
     <div className='project'>
       <div className='preview'>
         <a href={paper}>
-          <img src={preview} alt={`Preview of ${title}`} />
+          <Img
+            src={require(`assets/${id}.jpg`)}
+            alt={`Preview of ${title}`}
+            sizes={[300]}
+          />
         </a>
         <ul>
           <li>
@@ -65,7 +71,7 @@ export default function Project({
         <p>
           {abstract.split(' \n ').map((paragraph, idx) => (
             /* eslint-disable-next-line react/no-array-index-key */
-            <p key={`${id.current}-paragraph-${idx}`}>{paragraph}</p>
+            <p key={`${id}-paragraph-${idx}`}>{paragraph}</p>
           ))}
         </p>
       </div>
@@ -82,15 +88,12 @@ export default function Project({
         }
 
         .preview {
-          max-width: 300px;
+          flex: none;
+          width: 300px;
           display: flex;
           align-items: center;
           flex-direction: column;
           margin-right: var(--geist-gap);
-        }
-
-        .summary {
-          flex-shrink: 2;
         }
 
         @media (max-width: 800px) {
@@ -102,14 +105,14 @@ export default function Project({
             display: block;
           }
 
-          .preview img {
+          .preview :global(img) {
             display: none;
           }
         }
 
-        img {
+        .preview :global(img) {
           width: 100%;
-          height: 100%;
+          min-height: 85%;
           box-shadow: var(--shadow-large);
           background: white;
         }

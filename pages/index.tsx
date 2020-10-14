@@ -1,17 +1,8 @@
 import { useEffect, useRef } from 'react';
+import Img from 'react-optimized-image';
 
 import Grid from 'components/grid';
 import Page from 'components/page';
-import Photos from 'components/photos';
-
-import Backpack from 'static/backpack.jpg';
-import Family from 'static/family.jpg';
-import Graffiti from 'static/graffiti.jpg';
-import Pinecone from 'static/pinecone.jpg';
-import Sitting from 'static/sitting.jpg';
-import Standing from 'static/standing.jpg';
-import Sunset from 'static/sunset.jpg';
-import Water from 'static/water.jpg';
 
 async function initTilt(elem: HTMLDivElement): Promise<void> {
   const { default: VanillaTilt } = await import('vanilla-tilt');
@@ -23,6 +14,20 @@ interface CellProps {
   alt: string;
 }
 
+// TODO: Remove the `require()` statement and instead import these images using
+// ES6 syntax. Blocker: the way that `react-optimized-image/plugin` is setup.
+// @see {@link https://github.com/cyrilwanner/react-optimized-image/issues/6}
+// @see {@link https://github.com/cyrilwanner/next-optimized-images/issues/186}
+
+// TODO: Properly set the breakpoints:
+// 1. Less than 448px viewport width, use 400px images.
+// 2. Between 448px - 872px viewport width, use 800px images.
+// 3. Greater than 872px viewport width, use 600px images.
+// @see {@link https://github.com/cyrilwanner/react-optimized-image/issues/17}
+
+// TODO: Add a blurred image loading placeholder once it's added to canary.
+// @see {@link https://github.com/cyrilwanner/react-optimized-image/issues/5}
+
 function Cell({ src, alt }: CellProps): JSX.Element {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -33,9 +38,13 @@ function Cell({ src, alt }: CellProps): JSX.Element {
 
   return (
     <div ref={ref}>
-      <img src={src} alt={alt} />
+      <Img
+        src={require(`assets/${src}.jpg`)}
+        alt={alt}
+        sizes={[400, 600, 800]}
+      />
       <style jsx>{`
-        img {
+        div :global(img) {
           width: 100%;
           cursor: pointer;
           margin-bottom: -4px;
@@ -45,31 +54,27 @@ function Cell({ src, alt }: CellProps): JSX.Element {
   );
 }
 
-// TODO: Use `next-optimized-images` to:
-// 1. Make these high-quality images load faster (e.g. use `webm` or `jpg`).
-// 2. Show blurred thumbnails while they're loading (like Medium).
-// @see {@link https://github.com/cyrilwanner/next-optimized-images}
 export default function PhotoPage(): JSX.Element {
   return (
     <Page title='Nicholas Chiang - Photography' id='photo'>
       <Grid>
-        <Cell src={Backpack} alt='MW Backpack at Stanford University' />
-        <Cell src={Family} alt='Family enjoying California weather' />
-        <Cell src={Sitting} alt='Couple on the grass at Stanford University' />
+        <Cell src='backpack' alt='MW Backpack at Stanford University' />
+        <Cell src='family' alt='Family enjoying California weather' />
+        <Cell src='sitting' alt='Couple on the grass at Stanford University' />
         <Cell
-          src={Standing}
+          src='standing'
           alt='Couple framed on the steps of Stanford University'
         />
         <Cell
-          src={Graffiti}
+          src='graffiti'
           alt='Admiring the iconic graffiti in San Francisco'
         />
         <Cell
-          src={Pinecone}
+          src='pinecone'
           alt='Beauties of nature as embodied by a pinecone branch'
         />
-        <Cell src={Sunset} alt='Captured while driving by a field at 60mph' />
-        <Cell src={Water} alt='An inviolate stream of chaotic water' />
+        <Cell src='sunset' alt='Captured while driving by a field at 60mph' />
+        <Cell src='water' alt='An inviolate stream of chaotic water' />
       </Grid>
     </Page>
   );

@@ -1,6 +1,10 @@
-const withImages = require('next-images');
+const withOptimizedImages = require('next-optimized-images');
 
-module.exports = withImages({
+// Increase the max num of event listeners to support image optimization.
+// @see {@link https://github.com/cyrilwanner/next-optimized-images/issues/120#issuecomment-694440787}
+process.setMaxListeners(20);
+
+module.exports = withOptimizedImages({
   reactStrictMode: true,
   webpack(config, { isServer }) {
     if (!isServer && process.env.ANALYZE === 'true') {
