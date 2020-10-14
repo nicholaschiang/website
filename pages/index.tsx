@@ -38,15 +38,21 @@ function Cell({ src, alt }: CellProps): JSX.Element {
 
   return (
     <div ref={ref}>
-      <Img
-        src={require(`assets/${src}.jpg`)}
-        alt={alt}
-        sizes={[400, 600, 800]}
-      />
+      <a href={require(`assets/${src}.jpg?original`)}>
+        <Img
+          src={require(`assets/${src}.jpg`)}
+          alt={alt}
+          sizes={[400, 600, 800]}
+        />
+      </a>
       <style jsx>{`
+        a {
+          text-decoration: none;
+          color: inherit;
+        }
+
         div :global(img) {
           width: 100%;
-          cursor: pointer;
           margin-bottom: -4px;
         }
       `}</style>
