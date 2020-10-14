@@ -1,8 +1,8 @@
-const withOptimizedImages = require('next-optimized-images');
-
 // Increase the max num of event listeners to support image optimization.
-// @see {@link https://github.com/cyrilwanner/next-optimized-images/issues/120#issuecomment-694440787}
-process.setMaxListeners(20);
+// @see {@link https://bit.ly/2ST9m2w}
+process.setMaxListeners(50);
+
+const withOptimizedImages = require('next-optimized-images');
 
 module.exports = withOptimizedImages({
   reactStrictMode: true,
