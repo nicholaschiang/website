@@ -1,4 +1,4 @@
-import { SyntheticEvent, useCallback, useRef } from 'react';
+import { useCallback, useRef } from 'react';
 
 import LockIcon from 'components/icons/lock';
 import RefreshIcon from 'components/icons/refresh';
@@ -121,7 +121,10 @@ function Browser({ url, refresh }: BrowserProps): JSX.Element {
   );
 }
 
-function Tabs(): JSX.Element {
+// TODO: Remove this export (and remove this `Tabs` component altogether) or add
+// props to `Window` that enable it's usage.
+// @see {@link https://vercel.com/design/window#with-tabs}
+export function Tabs(): JSX.Element {
   return (
     <div className='tabs'>
       <div className='tab'>index.js</div>

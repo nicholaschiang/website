@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useMemo } from 'react';
 import Img from 'react-optimized-image';
 
 export interface ProjectProps {

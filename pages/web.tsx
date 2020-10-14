@@ -1,6 +1,5 @@
 import Grid from 'components/grid';
 import Page from 'components/page';
-import Websites from 'components/websites';
 import Window from 'components/window';
 
 export default function WebPage(): JSX.Element {

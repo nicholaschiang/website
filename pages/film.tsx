@@ -1,4 +1,3 @@
-import Films from 'components/films';
 import Grid from 'components/grid';
 import Page from 'components/page';
 import Video from 'components/video';
