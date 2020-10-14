@@ -17,7 +17,7 @@ function Browser({ url, refresh }: BrowserProps): JSX.Element {
           <i className='lock'>
             <LockIcon />
           </i>
-          <a href={`https:${url}`}>{url}</a>
+          <a href={`https://${url}`}>{url}</a>
           <button className='refresh' type='button' onClick={refresh}>
             <RefreshIcon />
           </button>
