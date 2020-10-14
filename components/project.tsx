@@ -1,15 +1,17 @@
 import { useMemo } from 'react';
 import Img from 'react-optimized-image';
 
+export interface Link {
+  href: string;
+  label: string;
+}
+
 export interface ProjectProps {
   id: string;
   title: string;
   authors: string[];
   abstract: string;
-  paper: string;
-  code?: string;
-  data?: string;
-  slides?: string;
+  links: Link[];
 }
 
 // TODO: Remove the `require()` statement and instead import these images using
@@ -21,10 +23,7 @@ export default function Project({
   title,
   authors,
   abstract,
-  paper,
-  code,
-  data,
-  slides,
+  links,
 }: ProjectProps): JSX.Element {
   const authorIdx = useMemo(() => {
     return authors.indexOf('Nicholas Chiang');
@@ -33,7 +32,7 @@ export default function Project({
   return (
     <div className='project'>
       <div className='preview'>
-        <a href={paper}>
+        <a href={links[0]?.href}>
           <Img
             src={require(`assets/${id}.jpg`)}
             alt={`Preview of ${title}`}
@@ -41,30 +40,17 @@ export default function Project({
           />
         </a>
         <ul>
-          <li>
-            <a href={paper}>Paper</a>
-          </li>
-          {!!slides && (
+          {links.map(({ href, label }) => (
             <li>
-              <a href={slides}>Slides</a>
+              <a href={href}>{label}</a>
             </li>
-          )}
-          {!!code && (
-            <li>
-              <a href={code}>Code</a>
-            </li>
-          )}
-          {!!data && (
-            <li>
-              <a href={data}>Data</a>
-            </li>
-          )}
+          ))}
         </ul>
       </div>
       <div className='summary'>
         <h3>{title}</h3>
         <h6>
-          {`${authors.slice(0, authorIdx).join(', ')}, `}
+          {authorIdx !== 0 && `${authors.slice(0, authorIdx).join(', ')}, `}
           <b>Nicholas Chiang</b>
           {`, ${authors.slice(authorIdx + 1).join(', ')}`}
         </h6>

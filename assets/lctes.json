@@ -9,8 +9,22 @@
     "Christoper Ré",
     "Philip Levis"
   ],
-  "paper": "https://dl.acm.org/doi/10.1145/3316482.3326344?cid=99659274049",
-  "slides": "https://sing.stanford.edu/site/talks/hack-lctes19.pdf",
-  "data": "https://doi.org/10.5281/zenodo.2647543",
-  "code": "https://github.com/lukehsiao/lctes-p27"
+  "links": [
+    {
+      "label": "Paper",
+      "href": "https://dl.acm.org/doi/10.1145/3316482.3326344?cid=99659274049"
+    },
+    {
+      "label": "Slides",
+      "href": "https://sing.stanford.edu/site/talks/hack-lctes19.pdf"
+    },
+    {
+      "label": "Data",
+      "href": "https://doi.org/10.5281/zenodo.2647543"
+    },
+    {
+      "label": "Code",
+      "href": "https://github.com/lukehsiao/lctes-p27"
+    }
+  ]
 }

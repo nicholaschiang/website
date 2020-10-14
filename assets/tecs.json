@@ -9,5 +9,10 @@
     "Christoper Ré",
     "Philip Levis"
   ],
-  "paper": "https://dl.acm.org/doi/10.1145/3391906?cid=99659274049"
+  "links": [
+    {
+      "label": "Paper",
+      "href": "https://dl.acm.org/doi/10.1145/3391906?cid=99659274049"
+    }
+  ]
 }
