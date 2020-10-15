@@ -222,6 +222,7 @@ export default function Video({
           display: flex;
           justify-content: center;
           padding-bottom: calc(100% / 16 * 9);
+          background-color: var(--accents-2);
         }
         
         .caption {

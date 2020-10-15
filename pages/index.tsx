@@ -47,8 +47,29 @@ function Cell({ src, alt }: CellProps): JSX.Element {
       </a>
       <style jsx>{`
         a {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
           text-decoration: none;
-          color: inherit;
+          cursor: pointer;
+          font-size: 14px;
+          color: var(--accents-5);
+          transition: color 0.2s ease 0s;
+        }
+
+        a:hover {
+          color: var(--geist-foreground);
+        }
+
+        div {
+          background-color: var(--accents-2);
+          padding-bottom: calc(100% / 3 * 2);
+          position: relative;
         }
 
         div :global(img) {

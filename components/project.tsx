@@ -32,7 +32,7 @@ export default function Project({
   return (
     <div className='project'>
       <div className='preview'>
-        <a href={links[0]?.href}>
+        <a className='display' href={links[0]?.href}>
           <Img
             src={require(`assets/${id}.jpg`)}
             alt={`Preview of ${title}`}
@@ -98,9 +98,19 @@ export default function Project({
 
         .preview :global(img) {
           width: 100%;
-          min-height: 85%;
+        }
+
+        .preview :global(picture) {
+          text-align: center;
+        }
+
+        .preview a.display {
+          width: 100%;
+          min-height: 90%;
+          background-color: var(--accents-2);
           box-shadow: var(--shadow-large);
-          background: white;
+          display: flex;
+          align-items: center;
         }
 
         h3 {
