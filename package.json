@@ -30,13 +30,12 @@
     "classnames": "^2.2.6",
     "hls.js": "^0.14.15",
     "nanoid": "^3.1.12",
-    "next": "^10.0.7",
+    "next": "^10.0.9",
     "next-optimized-images": "canary",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-optimized-image": "^0.4.1",
-    "styled-jsx": "^3.4.2",
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
@@ -65,7 +64,7 @@
     "pretty-quick": "^3.0.2",
     "release": "^6.3.0",
     "typescript": "^4.0.3",
-    "webpack": "^5.0.0",
+    "webpack": "^5.28.0",
     "webpack-bundle-analyzer": "^3.9.0"
   },
   "resolutions": {
