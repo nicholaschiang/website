@@ -6523,6 +6523,17 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
+"next-google-fonts@npm:canary":
+  version: 2.1.1-canary-1
+  resolution: "next-google-fonts@npm:2.1.1-canary-1"
+  peerDependencies:
+    next: ">= 10.0.7"
+    react: ">= 17.0.1"
+    react-dom: ">= 17.0.1"
+  checksum: 86a545470b203db01eaf189448cb7943c80df212f613b88e3768b91f684fce4aeff83309e01f881a5d3970c60450fa96e3910f84bd75aa7982c17828b1c51340
+  languageName: node
+  linkType: hard
+
 "next-optimized-images@npm:canary":
   version: 3.0.0-canary.10
   resolution: "next-optimized-images@npm:3.0.0-canary.10"
@@ -9864,6 +9875,7 @@ typescript@^4.0.3:
     husky: ^4.3.0
     nanoid: ^3.1.12
     next: ^10.0.9
+    next-google-fonts: canary
     next-optimized-images: canary
     nprogress: ^0.2.0
     prettier: ^2.1.2
