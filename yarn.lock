@@ -6508,7 +6508,7 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"next@npm:^10.1.1":
+"next@npm:^10.1.2":
   version: 10.1.2
   resolution: "next@npm:10.1.2"
   dependencies:
@@ -9823,7 +9823,7 @@ typescript@^4.0.3:
     hls.js: ^0.14.15
     husky: ^4.3.0
     nanoid: ^3.1.12
-    next: ^10.1.1
+    next: ^10.1.2
     next-google-fonts: canary
     next-optimized-images: canary
     nprogress: ^0.2.0
