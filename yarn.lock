@@ -2872,12 +2872,12 @@ __metadata:
   linkType: hard
 
 "css-tree@npm:^1.1.2":
-  version: 1.1.2
-  resolution: "css-tree@npm:1.1.2"
+  version: 1.1.3
+  resolution: "css-tree@npm:1.1.3"
   dependencies:
     mdn-data: 2.0.14
     source-map: ^0.6.1
-  checksum: a6b14e13fe072dc902b11ca149d23d78c6804699d88060900de58699cae4aa469468af9fead808029f9d83fced08d67b99b009c83d3e07b90e064e5143b9096b
+  checksum: 5b1bf44c457f4682feef5d1fccf0758aabaec3b77f264418a022826a0e4c2dc9f2283205223ddba147eba8ee4cb88caa91298b54c4b7e9af345bb820e9a32868
   languageName: node
   linkType: hard
 
@@ -3237,9 +3237,9 @@ __metadata:
   linkType: hard
 
 "domelementtype@npm:^2.0.1":
-  version: 2.1.0
-  resolution: "domelementtype@npm:2.1.0"
-  checksum: c3e63b6c94bf74d6375e12370f612d1cd61c0d3bc21b46684d93c797b3924de2e84278b0b5cdf3dce21f64ee94c34a005994f373c0e420759ae1856f075f0f57
+  version: 2.2.0
+  resolution: "domelementtype@npm:2.2.0"
+  checksum: 70af22cd69a8e0c0cd4fbbba0459991aacb015f60765050b4a6d1750fd201b4bd4fd1e6922e945200f9cc725cd61be1cd393a3b9b576187759e3b046f33a4a30
   languageName: node
   linkType: hard
 
@@ -6485,14 +6485,14 @@ fsevents@~2.3.1:
   languageName: node
   linkType: hard
 
-"next-google-fonts@npm:canary":
-  version: 2.1.1-canary-2
-  resolution: "next-google-fonts@npm:2.1.1-canary-2"
+"next-google-fonts@npm:^2.2.0":
+  version: 2.2.0
+  resolution: "next-google-fonts@npm:2.2.0"
   peerDependencies:
     next: ">= 10.0.7"
     react: ">= 17.0.1"
     react-dom: ">= 17.0.1"
-  checksum: 1bc902b77b93cf55e1fdf5746a289cdb9663516143441e725edb9fe539c96001576409a06cb1b5903b057766db801fc2f7c9eb7680941b496210da764b87a875
+  checksum: addde2211cca3366b5364a99a798566c867d5cbc2222000d5141b0e610c02c86d53def2d416bd33700397478f329cf4c79a6dc13be8967121fbe04751f24fdf3
   languageName: node
   linkType: hard
 
@@ -9824,7 +9824,7 @@ typescript@^4.0.3:
     husky: ^4.3.0
     nanoid: ^3.1.12
     next: ^10.1.2
-    next-google-fonts: canary
+    next-google-fonts: ^2.2.0
     next-optimized-images: canary
     nprogress: ^0.2.0
     prettier: ^2.1.2

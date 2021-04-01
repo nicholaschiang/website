@@ -6,6 +6,7 @@ const withOptimizedImages = require('next-optimized-images');
 
 module.exports = withOptimizedImages({
   reactStrictMode: true,
+  future: { webpack5: true },
   webpack(config, { isServer }) {
     if (!isServer && process.env.ANALYZE === 'true') {
       // Only run the bundle analyzer for the client-side chunks.
