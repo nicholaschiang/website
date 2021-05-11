@@ -101,7 +101,7 @@ export default function AboutPage(): JSX.Element {
           </p>
           <p>
             Feel free to skim <Link href='/resume.pdf'>my resume</Link> and{' '}
-            <Link href='mailto:hi@nicholaschiang.com'>shoot me an email</Link>.
+            <Link href='mailto:nicholas@tutorbook.org'>shoot me an email</Link>.
           </p>
         </article>
         <style jsx>{`

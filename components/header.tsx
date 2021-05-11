@@ -28,7 +28,7 @@ export default function Header({ page }: HeaderProps): JSX.Element {
             Research
           </Link>
           <Link href='/resume.pdf'>Resume</Link>
-          <Link href='mailto:hi@nicholaschiang.com'>Contact</Link>
+          <Link href='mailto:nicholas@tutorbook.org'>Contact</Link>
         </ul>
       </nav>
       <style jsx>{`

@@ -9,6 +9,7 @@
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "analyze": "cross-env ANALYZE=true next build",
+    "resume": "cp ../resume/resume.pdf public",
     "lint": "eslint --ext .ts,.tsx .",
     "style": "pretty-quick --staged"
   },
