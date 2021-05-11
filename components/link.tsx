@@ -1,11 +1,10 @@
-import cn from 'classnames';
-
 import NextLink from 'next/link';
+import cn from 'classnames';
 
 export interface LinkProps {
   href: string;
   children: string;
-  active: boolean;
+  active?: boolean;
 }
 
 export default function Link({

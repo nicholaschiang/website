@@ -134,9 +134,10 @@ export default function Footer(): JSX.Element {
           <Link href='https://indiehackers.com/nicholaschiang'>
             IndieHackers
           </Link>
-          <Link href='https://instagram.com/nicholashchiang'>Instagram</Link>
-          <Link href='https://facebook.com/nicholas.heng.chiang'>Facebook</Link>
+          <Link href='https://instagram.com/niicholaschiiang'>Instagram</Link>
+          <Link href='https://facebook.com/niicholaschiiang'>Facebook</Link>
           <Link href='https://linkedin.com/in/nicholaschiang'>LinkedIn</Link>
+          <Link href='https://twitter.com/niicholaschiang'>Twitter</Link>
           <Link href='https://github.com/nicholaschiang'>GitHub</Link>
         </Group>
         <Group label='Portfolio'>
@@ -146,13 +147,13 @@ export default function Footer(): JSX.Element {
           <Link href='/research'>Research</Link>
         </Group>
         <Group label='Useful Links'>
-          <Link href='mailto:site@nicholaschiang.com'>Contact</Link>
+          <Link href='mailto:hi@nicholaschiang.com'>Contact</Link>
           <Link href='/resume.pdf'>Resume</Link>
           <Link href='https://github.com/nicholaschiang/website'>Source</Link>
         </Group>
       </nav>
       <section>
-        <span>Copyright &copy; 2020 Nicholas Chiang. All rights reserved.</span>
+        <span>Copyright &copy; 2021 Nicholas Chiang. All rights reserved.</span>
         <Select
           small
           value={theme}
