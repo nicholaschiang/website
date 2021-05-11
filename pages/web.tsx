@@ -7,8 +7,12 @@ export default function WebPage(): JSX.Element {
     <Page title='Web Development - Nicholas Chiang' id='web'>
       <Grid cell='var(--geist-page-width)'>
         <Window
-          title='Connects students with expert mentors and volunteer tutors'
+          title='Connect students with expert mentors and volunteer tutors'
           url='tutorbook.app'
+        />
+        <Window
+          title='A place where you can enjoy learning from newsletters'
+          url='readhammock.com'
         />
         <Window
           title='Ecommerce site for a luxury clothing brand'
