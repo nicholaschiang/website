@@ -1,6 +1,6 @@
 export interface GridProps {
   children: JSX.Element[];
-  cell?: string;
+  cell: string;
 }
 
 export default function Grid({ children, cell }: GridProps): JSX.Element {
@@ -15,7 +15,7 @@ export default function Grid({ children, cell }: GridProps): JSX.Element {
         }
 
         .grid {
-          --cell: min(${cell || '400px'}, 100%);
+          --cell: min(${cell}, 100%);
           display: grid;
           margin: 0;
           grid-gap: var(--geist-gap);

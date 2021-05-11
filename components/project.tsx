@@ -1,5 +1,5 @@
+import Image from 'next/image';
 import { useMemo } from 'react';
-import Img from 'react-optimized-image';
 
 export interface Link {
   href: string;
@@ -14,10 +14,6 @@ export interface ProjectProps {
   links: Link[];
 }
 
-// TODO: Remove the `require()` statement and instead import these images using
-// ES6 syntax. Blocker: the way that `react-optimized-image/plugin` is setup.
-// @see {@link https://github.com/cyrilwanner/react-optimized-image/issues/6}
-// @see {@link https://github.com/cyrilwanner/next-optimized-images/issues/186}
 export default function Project({
   id,
   title,
@@ -25,23 +21,24 @@ export default function Project({
   abstract,
   links,
 }: ProjectProps): JSX.Element {
-  const authorIdx = useMemo(() => {
-    return authors.indexOf('Nicholas Chiang');
-  }, [authors]);
+  const authorIdx = useMemo(() => authors.indexOf('Nicholas Chiang'), [
+    authors,
+  ]);
 
   return (
     <div className='project'>
       <div className='preview'>
         <a className='display' href={links[0]?.href}>
-          <Img
-            src={require(`assets/${id}.jpg`)}
+          <Image
+            src={`/imgs/${id}.jpg`}
             alt={`Preview of ${title}`}
-            sizes={[300]}
+            layout='fill'
+            sizes='300px'
           />
         </a>
         <ul>
           {links.map(({ href, label }) => (
-            <li>
+            <li key={label.toLowerCase().split(' ').join('-')}>
               <a href={href}>{label}</a>
             </li>
           ))}
@@ -82,28 +79,6 @@ export default function Project({
           margin-right: var(--geist-gap);
         }
 
-        @media (max-width: 800px) {
-          .project {
-            flex-direction: column-reverse;
-          }
-
-          .preview {
-            display: block;
-          }
-
-          .preview :global(img) {
-            display: none;
-          }
-        }
-
-        .preview :global(img) {
-          width: 100%;
-        }
-
-        .preview :global(picture) {
-          text-align: center;
-        }
-
         .preview a.display {
           width: 100%;
           min-height: 90%;
@@ -111,6 +86,8 @@ export default function Project({
           box-shadow: var(--shadow-large);
           display: flex;
           align-items: center;
+          justify-content: center;
+          position: relative;
         }
 
         h3 {
@@ -160,6 +137,26 @@ export default function Project({
 
         a:hover {
           color: var(--geist-foreground);
+        }
+
+        @media (max-width: 800px) {
+          .project {
+            flex-direction: column-reverse;
+          }
+
+          .preview {
+            display: block;
+            width: unset;
+            margin: 0;
+          }
+
+          .preview a.display {
+            display: none;
+          }
+
+          ul {
+            margin: 0;
+          }
         }
       `}</style>
     </div>

@@ -32,11 +32,9 @@
     "hls.js": "^0.14.15",
     "nanoid": "^3.1.12",
     "next": "^10.2.0",
-    "next-optimized-images": "canary",
     "nprogress": "^0.2.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-optimized-image": "^0.4.1",
     "vanilla-tilt": "^1.7.0"
   },
   "devDependencies": {
