@@ -121,7 +121,21 @@ export default function AboutPage(): JSX.Element {
 
           .img {
             flex: none;
-            background: var(--accents-2);
+            font-size: 14px;
+            text-decoration: none;
+            color: var(--accents-5);
+            background-color: var(--accents-2);
+            transition: color 0.2s ease 0s;
+          }
+
+          .img:hover {
+            color: var(--geist-foreground);
+          }
+
+          .img :global(img) {
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
           }
 
           .img.portrait {
