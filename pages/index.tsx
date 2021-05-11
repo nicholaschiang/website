@@ -72,7 +72,7 @@ export default function AboutPage(): JSX.Element {
         </a>
         <a ref={landscapeRef} href='/me-original.jpg' className='img landscape'>
           <Image
-            src='/me-original.png'
+            src='/me-original.jpg'
             objectPosition='center'
             objectFit='cover'
             layout='fill'
