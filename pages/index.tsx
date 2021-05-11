@@ -62,7 +62,13 @@ export default function AboutPage(): JSX.Element {
     <Page title='About - Nicholas Chiang' id='about'>
       <div className='flex'>
         <a ref={portraitRef} href='/me-cropped.png' className='img portrait'>
-          <Image src='/me-cropped.png' height={365} width={300} priority />
+          <Image
+            src='/me-cropped.png'
+            height={365}
+            width={300}
+            alt='Me'
+            priority
+          />
         </a>
         <a ref={landscapeRef} href='/me-original.jpg' className='img landscape'>
           <Image
@@ -70,6 +76,7 @@ export default function AboutPage(): JSX.Element {
             objectPosition='center'
             objectFit='cover'
             layout='fill'
+            alt='Me'
             priority
           />
         </a>

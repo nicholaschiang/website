@@ -47,12 +47,12 @@ export default function Project({
         </ul>
       </div>
       <div className='summary'>
-        <h3>{title}</h3>
-        <h6>
+        <h2>{title}</h2>
+        <h3>
           {authorIdx !== 0 && `${authors.slice(0, authorIdx).join(', ')}, `}
           <b>Nicholas Chiang</b>
           {`, ${authors.slice(authorIdx + 1).join(', ')}`}
-        </h6>
+        </h3>
         <p>
           {abstract.split(' \n ').map((paragraph, idx) => (
             /* eslint-disable-next-line react/no-array-index-key */
@@ -90,13 +90,13 @@ export default function Project({
           position: relative;
         }
 
-        h3 {
+        h2 {
           font-size: 24px;
           font-weight: 600;
           margin: 0 0 14px;
         }
 
-        h6 {
+        h3 {
           font-size: 14px;
           font-weight: 600;
           margin: 0;

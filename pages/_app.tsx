@@ -16,7 +16,8 @@ export default function App({ Component, pageProps }: AppProps): JSX.Element {
       const mq = matchMedia('(prefers-color-scheme: dark)');
       if (mq.matches) dark = true;
     }
-    document.documentElement.className = dark ? 'dark' : '';
+    if (dark) return document.documentElement.classList.add('dark');
+    return document.documentElement.classList.remove('dark');
   }, [theme]);
 
   useEffect(() => {

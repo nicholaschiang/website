@@ -1,6 +1,7 @@
 module.exports = {
   reactStrictMode: true,
   future: { webpack5: true },
+  i18n: { locales: ['en-US'], defaultLocale: 'en-US' },
   images: {
     // Specify the image sizes used for `layout='fill'` on the photography page.
     // These are used in tandem with the `sizes` property for three breakpoints:

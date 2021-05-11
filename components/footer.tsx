@@ -54,7 +54,7 @@ function Group({ label, children }: GroupProps): JSX.Element {
     <div>
       <input id={id.current} type='checkbox' aria-label={label} />
       <label htmlFor={id.current}>
-        <h3>{label}</h3>
+        <h2>{label}</h2>
       </label>
       <ul>{children}</ul>
       <style jsx>{`
@@ -83,7 +83,7 @@ function Group({ label, children }: GroupProps): JSX.Element {
           padding: 0;
         }
 
-        h3 {
+        h2 {
           font-weight: 400;
           font-size: 0.875rem;
           margin: var(--geist-gap-half) 0;
@@ -105,17 +105,17 @@ function Group({ label, children }: GroupProps): JSX.Element {
             display: block;
           }
 
-          h3 {
+          h2 {
             cursor: pointer;
           }
 
-          h3::after {
+          h2::after {
             content: '+';
             float: right;
             transition: transform 0.15s ease;
           }
 
-          input:checked ~ label h3::after {
+          input:checked ~ label h2::after {
             transform: rotate(45deg);
           }
         }
