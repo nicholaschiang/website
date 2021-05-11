@@ -57,11 +57,7 @@ function Cell({ priority, src, alt }: CellProps): JSX.Element {
           left: 0;
           width: 100%;
           height: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           text-decoration: none;
-          cursor: pointer;
           font-size: 14px;
           color: var(--accents-5);
           transition: color 0.2s ease 0s;
