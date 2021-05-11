@@ -13,6 +13,14 @@
     {
       "label": "Paper",
       "href": "https://dl.acm.org/doi/10.1145/3391906?cid=99659274049"
+    },
+    {
+      "label": "Data",
+      "href": "https://doi.org/10.5281/zenodo.4558344"
+    },
+    {
+      "label": "Code",
+      "href": "https://github.com/lukehsiao/tecs-hardware-kbc"
     }
   ]
 }

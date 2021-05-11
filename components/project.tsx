@@ -39,7 +39,9 @@ export default function Project({
         <ul>
           {links.map(({ href, label }) => (
             <li key={label.toLowerCase().split(' ').join('-')}>
-              <a href={href}>{label}</a>
+              <a href={href} target='_blank' rel='noopener noreferrer'>
+                {label}
+              </a>
             </li>
           ))}
         </ul>
