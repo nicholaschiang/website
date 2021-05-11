@@ -44,6 +44,12 @@ export default function Page({
           div {
             min-height: 100vh;
           }
+
+          main {
+            max-width: var(--geist-page-width-with-margin);
+            margin: auto;
+            padding: var(--geist-gap-double) var(--geist-page-margin);
+          }
         `}</style>
       </div>
       <Footer />

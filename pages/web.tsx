@@ -4,7 +4,7 @@ import Window from 'components/window';
 
 export default function WebPage(): JSX.Element {
   return (
-    <Page title='Nicholas Chiang - Web Development' id='web'>
+    <Page title='Web Development - Nicholas Chiang' id='web'>
       <Grid cell='var(--geist-page-width)'>
         <Window
           title='Connects students with expert mentors and volunteer tutors'

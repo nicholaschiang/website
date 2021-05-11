@@ -6,7 +6,7 @@ import Video from 'components/video';
 // can create my own optimized versions using `next-optimized-images`.
 export default function FilmPage(): JSX.Element {
   return (
-    <Page title='Nicholas Chiang - Filmmaking' id='film'>
+    <Page title='Filmmaking - Nicholas Chiang' id='film'>
       <Grid cell='var(--geist-page-width)'>
         <Video thumb={56} id='PE4KdIrENlIY3LYIvfzOAO496VexiAPCrr1PIccJnc4' />
         <Video thumb={26} id='MCOe00cp5LCWa3jtr7xQyBJNUtWUVlBT6RkpoRKycFF4' />

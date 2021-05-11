@@ -12,7 +12,10 @@ export default function Header({ page }: HeaderProps): JSX.Element {
       <h1>Nicholas Chiang</h1>
       <nav>
         <ul>
-          <Link active={page === 'photo'} href='/'>
+          <Link active={page === 'about'} href='/'>
+            About
+          </Link>
+          <Link active={page === 'photo'} href='/photo'>
             Photography
           </Link>
           <Link active={page === 'film'} href='/film'>

@@ -6,7 +6,7 @@ import TECS from 'assets/tecs.json';
 
 export default function ResearchPage(): JSX.Element {
   return (
-    <Page title='Nicholas Chiang - Research' id='research'>
+    <Page title='Research - Nicholas Chiang' id='research'>
       <Project {...LCTES} />
       <Project {...TECS} />
     </Page>

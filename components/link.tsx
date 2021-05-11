@@ -21,7 +21,7 @@ export default function Link({
         li {
           display: inline;
           float: none;
-          margin: 0 var(--geist-gap);
+          margin: 0 var(--geist-gap-half);
         }
 
         a {
@@ -43,7 +43,6 @@ export default function Link({
         @media (max-width: 800px) {
           li {
             white-space: nowrap;
-            margin: 0 var(--geist-gap-half);
           }
 
           li:first-of-type {

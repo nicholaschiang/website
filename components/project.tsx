@@ -60,14 +60,12 @@ export default function Project({
       </div>
       <style jsx>{`
         .project {
-          max-width: var(--geist-page-width-with-margin);
-          margin: auto;
-          padding: var(--geist-gap-double) var(--geist-page-margin) 0;
+          margin-bottom: var(--geist-gap-double);
           display: flex;
         }
 
         .project:last-of-type {
-          padding-bottom: var(--geist-gap-double);
+          margin-bottom: 0;
         }
 
         .preview {

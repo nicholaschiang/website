@@ -5,15 +5,9 @@ export interface GridProps {
 
 export default function Grid({ children, cell }: GridProps): JSX.Element {
   return (
-    <div className='wrapper'>
-      <div className='grid'>{children}</div>
+    <div className='grid'>
+      {children}
       <style jsx>{`
-        .wrapper {
-          max-width: var(--geist-page-width-with-margin);
-          margin: auto;
-          padding: var(--geist-gap-double) var(--geist-page-margin);
-        }
-
         .grid {
           --cell: min(${cell}, 100%);
           display: grid;
