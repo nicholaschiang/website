@@ -28,7 +28,7 @@ export default function Select<T extends string>({
     <label>
       <div>
         <span className='prefix'>
-          <SystemIcon />
+          {options.find((o) => o.value === value)?.icon || <SystemIcon />}
         </span>
         <select
           value={value}
