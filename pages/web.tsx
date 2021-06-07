@@ -15,6 +15,10 @@ export default function WebPage(): JSX.Element {
           url='readhammock.com'
         />
         <Window
+          title='The Saint Michael Trio is Silicon Valley’s update to the classical music scene.'
+          url='saintmichaeltrio.vercel.app'
+        />
+        <Window
           title='Ecommerce site for a luxury clothing brand'
           url='niveaux-de-gris.web.app'
         />
